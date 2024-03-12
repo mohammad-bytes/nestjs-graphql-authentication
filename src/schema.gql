@@ -2,19 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreateUserInput {
-  email: String!
-  first_name: String!
-  last_name: String!
-  password: String!
-}
-
 type Mutation {
-  createUser(CreateUserInput: CreateUserInput!): UserResponseDto!
+  createUser(CreateUserInput: SignUpInput!): UserResponseDto!
 }
 
 type Query {
   findAllUser: [User!]!
+}
+
+input SignUpInput {
+  email: String!
+  first_name: String!
+  last_name: String!
+  password: String!
 }
 
 type User {

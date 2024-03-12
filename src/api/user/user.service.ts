@@ -1,15 +1,20 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CreateUserInput } from './dto/create-user.input';
 import { User } from './schema/user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserResponseDto } from './dto/user-response.dto';
+import { SignUpInput } from '../auth/dto/signIn-response.dto';
 
 @Injectable()
 export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) { }
 
-  async createUser(body: CreateUserInput): Promise<UserResponseDto> {
+  /** get access use model for any service */
+  getTable() {
+    return this.userModel;
+  }
+
+  async createUser(body: SignUpInput): Promise<UserResponseDto> {
     try {
       const user = await this.userModel.create({
         first_name: body.first_name,
