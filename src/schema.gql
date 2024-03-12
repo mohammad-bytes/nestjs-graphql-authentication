@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateUserInput {
+  email: String!
+  first_name: String!
+  last_name: String!
+  password: String!
+}
+
+type Mutation {
+  createUser(CreateUserInput: CreateUserInput!): UserResponseDto!
+}
+
+type Query {
+  findAllUser: [User!]!
+}
+
+type User {
+  email: String!
+  first_name: String!
+  isDeleted: Boolean!
+  last_name: String!
+  password: String!
+  role: String!
+}
+
+type UserResponseDto {
+  data: User
+  message: String!
+  statusCode: Float!
+}
