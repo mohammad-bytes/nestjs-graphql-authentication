@@ -6,6 +6,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { join } from 'path';
 import { UserModule } from './api/user/user.module';
 import * as dotenv from 'dotenv';
+import { AuthModule } from './api/auth/auth.module';
 dotenv.config();
 
 @Module({
@@ -32,7 +33,8 @@ dotenv.config();
       },
 
     }),
-    UserModule
+    UserModule,
+    AuthModule
   ],
 })
 export class AppModule { }

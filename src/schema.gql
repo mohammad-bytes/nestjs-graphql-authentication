@@ -4,10 +4,16 @@
 
 type Mutation {
   createUser(CreateUserInput: SignUpInput!): UserResponseDto!
+  signUp(signUpInput: SignUpInput!): ResponseDto!
 }
 
 type Query {
   findAllUser: [User!]!
+}
+
+type ResponseDto {
+  message: String!
+  statusCode: Float!
 }
 
 input SignUpInput {

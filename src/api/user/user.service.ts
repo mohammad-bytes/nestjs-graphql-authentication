@@ -3,7 +3,7 @@ import { User } from './schema/user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { UserResponseDto } from './dto/user-response.dto';
-import { SignUpInput } from '../auth/dto/signIn-response.dto';
+import { SignUpInput } from '../auth/dto/signUp-input.dto';
 
 @Injectable()
 export class UserService {
