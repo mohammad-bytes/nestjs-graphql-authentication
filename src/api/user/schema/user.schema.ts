@@ -20,7 +20,6 @@ export class User {
     email: string;
 
     @Prop()
-    @Field()
     password: string;
 
     @Prop({ default: Role.USER })
