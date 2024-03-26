@@ -1,21 +1,15 @@
 {
     "version": 2,
-    "env": {
-        "PORT": "@PORT",
-        "JWT_SECRET": "@JWT_SECRET",
-        "DB_URL": "@DB_URL",
-        "DB_NAME": "@DB_NAME"
-    },
     "builds": [
         {
-            "src": "build/main.js",
+            "src": "src/main.ts",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "build/main.js",
+            "dest": "src/main.ts",
             "methods": [
                 "GET",
                 "POST",
